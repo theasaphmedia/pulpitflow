@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — PulpitFlow</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #fafaf8;
+      color: #1a1a2e;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 48px 24px 36px;
+      text-align: center;
+    }
+    header h1 { font-size: 2.2rem; letter-spacing: 3px; font-family: Georgia, serif; }
+    header p  { color: #a0c4a0; font-size: 1rem; margin-top: 6px; font-style: italic; }
+    header .meta { color: #888; font-size: 0.85rem; margin-top: 12px; font-family: Arial, sans-serif; }
+    .container { max-width: 780px; margin: 0 auto; padding: 40px 24px 80px; }
+    h2 {
+      font-size: 1.3rem;
+      color: #1a1a2e;
+      margin: 36px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #2d6a4f;
+      font-family: Arial, sans-serif;
+    }
+    h3 {
+      font-size: 1rem;
+      color: #2d6a4f;
+      margin: 20px 0 6px;
+      font-family: Arial, sans-serif;
+      font-weight: 700;
+    }
+    p { margin-bottom: 14px; }
+    ul { margin: 10px 0 16px 24px; }
+    li { margin-bottom: 8px; }
+    .highlight-box {
+      background: #f0f7f4;
+      border-left: 4px solid #2d6a4f;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+    .contact-box {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 24px 28px;
+      border-radius: 12px;
+      margin-top: 16px;
+    }
+    .contact-box a { color: #a0c4a0; }
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #999;
+      font-size: 0.85rem;
+      font-family: Arial, sans-serif;
+      border-top: 1px solid #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PULPITFLOW</h1>
+  <p>Privacy Policy</p>
+  <div class="meta">Effective Date: May 18, 2026 &nbsp;|&nbsp; Last Updated: May 18, 2026</div>
+</header>
+
+<div class="container">
+
+  <h2>1. Introduction</h2>
+  <p>PulpitFlow is a sermon preparation and preaching tool developed by TAI, founded by Solomon Stephen. We are committed to protecting your personal information and your right to privacy.</p>
+  <p>This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application. By using PulpitFlow, you agree to the terms described here.</p>
+
+  <h2>2. Information We Collect</h2>
+  <h3>a) Account Information</h3>
+  <p>When you create an account, we collect your email address. Your password is never stored by us — it is managed securely by Supabase Authentication using industry-standard encryption.</p>
+
+  <h3>b) Profile Information</h3>
+  <p>You may optionally provide your name, ministry title, church name, denomination, city, and country. This information is used solely to personalise your in-app experience and is never sold or shared with third parties.</p>
+
+  <h3>c) Sermon &amp; Ministry Content</h3>
+  <p>All sermon content, notes, tags, series, and related data you create belongs entirely to you. This content is never used to train AI models or shared with any third party.</p>
+
+  <h3>d) Bible Highlights &amp; Reading Data</h3>
+  <p>Scripture passages you highlight or bookmark are stored privately in your account and are never shared.</p>
+
+  <h3>e) Word Study Searches</h3>
+  <p>When you use the Word Study feature, only the word or phrase you search is sent to our secure backend — which then queries the Anthropic Claude AI. Your sermons, profile, and personal data are never included in these requests.</p>
+
+  <h2>3. How We Use Your Information</h2>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Provide, operate, and maintain the PulpitFlow application</li>
+    <li>Sync your sermons and data securely across sessions</li>
+    <li>Power AI-assisted features (Word Study) through our secure backend</li>
+    <li>Personalise your experience within the app</li>
+    <li>Respond to support requests sent to pulpitflow@gmail.com</li>
+    <li>Improve app performance and fix issues</li>
+  </ul>
+
+  <h2>4. Third-Party Services</h2>
+  <p>PulpitFlow uses the following third-party services, each with their own privacy policy:</p>
+
+  <h3>Supabase</h3>
+  <p>Provides secure data storage and user authentication. Data is encrypted at rest and in transit. Supabase is GDPR-compliant and SOC 2 Type II certified. See: <a href="https://supabase.com/privacy">supabase.com/privacy</a></p>
+
+  <h3>Anthropic Claude (Word Study feature)</h3>
+  <p>Powers the Word Study biblical research feature. Only the word or phrase you search is sent via our secure server — no personal data, sermon content, or account information is transmitted. See: <a href="https://www.anthropic.com/privacy">anthropic.com/privacy</a></p>
+
+  <h3>API.Bible</h3>
+  <p>Provides Scripture text retrieval. Only the requested Bible reference is sent. No personal data is transmitted. See: <a href="https://scripture.api.bible/privacy">scripture.api.bible/privacy</a></p>
+
+  <h2>5. Data Security</h2>
+  <p>We take the security of your data seriously:</p>
+  <ul>
+    <li>All data is encrypted in transit using HTTPS/TLS</li>
+    <li>All data is encrypted at rest within Supabase's secure infrastructure</li>
+    <li>Row-Level Security (RLS) ensures each user can only ever access their own data</li>
+    <li>The Anthropic API key is stored as a server-side secret — never exposed to the app or its users</li>
+    <li>Code obfuscation is applied to the app to resist reverse engineering</li>
+  </ul>
+
+  <div class="highlight-box">
+    <strong>Your sermons are yours.</strong> No one at TAI, and no AI system, can read your sermon content. It is protected by encryption and strict access controls.
+  </div>
+
+  <h2>6. Data Retention</h2>
+  <p>Your data is retained for as long as your account remains active. If you delete your account, all associated data — including your profile, sermons, and highlights — will be permanently deleted within 30 days. To request deletion, contact us at <a href="mailto:pulpitflow@gmail.com">pulpitflow@gmail.com</a>.</p>
+
+  <h2>7. Your Rights</h2>
+  <ul>
+    <li><strong>Access:</strong> View your data at any time within the app</li>
+    <li><strong>Correction:</strong> Update your profile information in-app at any time</li>
+    <li><strong>Export:</strong> Use the "Export Backup" feature in Settings to download all your sermon data</li>
+    <li><strong>Deletion:</strong> Request full account and data deletion by emailing pulpitflow@gmail.com</li>
+    <li><strong>Portability:</strong> Your exported backup is in a standard format you can keep indefinitely</li>
+  </ul>
+
+  <h2>8. Children's Privacy</h2>
+  <p>PulpitFlow is designed for pastors, ministers, and ministry workers. It is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal data, please contact us immediately.</p>
+
+  <h2>9. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you through the app or by email. Continued use of the app after changes are posted constitutes your acceptance of the updated policy.</p>
+
+  <h2>10. Contact Us</h2>
+  <p>For any privacy-related questions, requests, or concerns:</p>
+  <div class="contact-box">
+    <p><strong>Email:</strong> <a href="mailto:pulpitflow@gmail.com">pulpitflow@gmail.com</a></p>
+    <p><strong>Developer:</strong> TAI — Solomon Stephen</p>
+    <p><strong>Location:</strong> Lagos, Nigeria</p>
+    <br/>
+    <p style="color:#aaa; font-size:0.9rem;">We aim to respond to all enquiries within 5 business days.</p>
+  </div>
+
+</div>
+
+<footer>
+  PulpitFlow &nbsp;•&nbsp; Built for the Ministry &nbsp;•&nbsp; &copy; 2026 TAI
+</footer>
+
+</body>
+</html>

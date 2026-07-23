@@ -1,0 +1,134 @@
+name: pulpitflow
+description: "PulpitFlow — sermon preparation, preaching, and projection for pastors."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_riverpod: ^3.3.1
+  go_router: ^17.2.2
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.5
+  uuid: ^4.5.3
+  intl: ^0.20.2
+  shared_preferences: ^2.5.5
+  cached_network_image: ^3.4.1
+  flutter_animate: ^4.5.2
+  google_fonts: ^8.1.0
+  dio: ^5.9.2
+  logger: ^2.7.0
+  supabase_flutter: ^2.12.4
+  flutter_secure_storage: ^10.0.0
+  flutter_dotenv: ^6.0.1
+  wakelock_plus: ^1.5.2
+  package_info_plus: 9.0.0
+  url_launcher: ^6.3.2
+  share_plus: ^10.0.0
+  shimmer: ^3.0.0
+  pdf: ^3.11.1
+  printing: ^5.13.3
+  file_picker: ^8.1.7
+  read_pdf_text: ^0.3.1
+  docx_to_text: ^1.0.1
+  # Web-only PDF text extraction path — read_pdf_text is native-only (Apache
+  # PDFBox/PDFKit) and has no web implementation. Version left unpinned to
+  # "any" so `flutter pub get` resolves whatever's current rather than a
+  # version guessed here going stale or not existing.
+  syncfusion_flutter_pdf: any
+  # Renders the "Connect a Screen" join link as a scannable QR code on the
+  # preacher's session-code card, for same-room handoff as an alternative
+  # to reading the 6-character code aloud.
+  qr_flutter: any
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
+    - assets/
+  fonts:
+    - family: CormorantGaramond
+      fonts:
+        - asset: assets/fonts/CormorantGaramond/CormorantGaramond-Regular.ttf
+        - asset: assets/fonts/CormorantGaramond/CormorantGaramond-Italic.ttf
+          style: italic
+        - asset: assets/fonts/CormorantGaramond/CormorantGaramond-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/CormorantGaramond/CormorantGaramond-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/CormorantGaramond/CormorantGaramond-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/CormorantGaramond/CormorantGaramond-BoldItalic.ttf
+          weight: 700
+          style: italic
+    - family: OpenSans
+      fonts:
+        - asset: assets/fonts/OpenSans/OpenSans-Regular.ttf
+        - asset: assets/fonts/OpenSans/OpenSans-Italic.ttf
+          style: italic
+        - asset: assets/fonts/OpenSans/OpenSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/OpenSans/OpenSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/OpenSans/OpenSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/OpenSans/OpenSans-ExtraBold.ttf
+          weight: 800
+    - family: Lora
+      fonts:
+        - asset: assets/fonts/Lora/Lora-Regular.ttf
+        - asset: assets/fonts/Lora/Lora-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Lora/Lora-Bold.ttf
+          weight: 700
+    - family: Merriweather
+      fonts:
+        - asset: assets/fonts/Merriweather/Merriweather-Regular.ttf
+        - asset: assets/fonts/Merriweather/Merriweather-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Merriweather/Merriweather-Bold.ttf
+          weight: 700
+    - family: PlayfairDisplay
+      fonts:
+        - asset: assets/fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf
+        - asset: assets/fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf
+          style: italic
+        - asset: assets/fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf
+          weight: 700
+    - family: Literata
+      fonts:
+        - asset: assets/fonts/Literata/Literata-Regular.ttf
+        - asset: assets/fonts/Literata/Literata-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Literata/Literata-Bold.ttf
+          weight: 700
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+  windows:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
+    icon_size: 48
+  macos:
+    generate: true
+    image_path: "assets/icon/app_icon.png"
