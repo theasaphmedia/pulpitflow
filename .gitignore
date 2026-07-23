@@ -51,3 +51,7 @@ android/key.properties
 
 android/build/
 supabase/.temp/
+
+# Contains BIBLE_API_KEY — never commit. Bundled as a Flutter asset at build
+# time; CI (Vercel) writes this file from environment variables instead.
+.env
