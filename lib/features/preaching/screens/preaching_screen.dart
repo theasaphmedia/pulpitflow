@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -66,6 +67,17 @@ class _PreachingScreenState extends ConsumerState<PreachingScreen> {
   bool _projectionEnabled = false;
   String _sessionCode = '';
 
+  // Throttles the network broadcast itself (the on-screen block counter
+  // above still updates every frame). A fast scroll fling can fire the
+  // scroll listener dozens of times per second — unthrottled, that blew
+  // past Supabase Realtime's per-channel broadcast rate limit and left the
+  // projection screen frozen on whatever the first message was, even
+  // though the phone kept advancing normally. _broadcastSettleTimer
+  // guarantees the final position always gets sent once scrolling stops,
+  // even if it landed inside a throttle window.
+  DateTime? _lastBroadcastAt;
+  Timer? _broadcastSettleTimer;
+
   // Brightness cycles: dim → normal → bright
   static const _kBrightnessLevels = [0.5, 1.0, 1.4];
   int _brightnessLevelIndex = 1;
@@ -112,6 +124,7 @@ class _PreachingScreenState extends ConsumerState<PreachingScreen> {
   void dispose() {
     _scrollController.removeListener(_updateScrollProgress);
     _scrollController.dispose();
+    _broadcastSettleTimer?.cancel();
     _sermonTimer.stop();
     WakelockPlus.disable();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
@@ -204,7 +217,20 @@ class _PreachingScreenState extends ConsumerState<PreachingScreen> {
         _currentBlockIndex = idx;
         _totalContentBlocks = total;
       });
-      _broadcastCurrentState();
+
+      final now = DateTime.now();
+      final dueForBroadcast = _lastBroadcastAt == null ||
+          now.difference(_lastBroadcastAt!) > const Duration(milliseconds: 150);
+      _broadcastSettleTimer?.cancel();
+      if (dueForBroadcast) {
+        _lastBroadcastAt = now;
+        _broadcastCurrentState();
+      } else {
+        _broadcastSettleTimer = Timer(
+          const Duration(milliseconds: 200),
+          _broadcastCurrentState,
+        );
+      }
     }
   }
 
