@@ -5,10 +5,9 @@
 /// `$kPulpitFlowWebUrl/projection?code=7N2RYT` — instead of making the
 /// projectionist type a 6-character code read aloud over a phone call.
 ///
-/// UPDATE THIS after the first Vercel deploy — it's a placeholder until
-/// then. If a custom domain gets attached later, this is the only place
-/// that needs to change.
-const String kPulpitFlowWebUrl = 'https://pulpitflow.vercel.app';
+/// Live Vercel production URL (set 2026-07-23). If a custom domain gets
+/// attached later, this is the only place that needs to change.
+const String kPulpitFlowWebUrl = 'https://pulpitflow-taiglobal.vercel.app';
 
 /// Builds the shareable "connect a screen" link for a given session code.
 String buildProjectionJoinLink(String code) =>
